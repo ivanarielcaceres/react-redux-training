@@ -21,6 +21,7 @@ storiesOf('Basic', module)
       addItem={action('click to addItem')}
       removeItem={action('Click to remove item')}
       removeAllItems={action('Click to remove all items')}
+      fetchItems={action('Click to search items')}
     />
   ))
   .add('Basic with one item', () => (
@@ -29,6 +30,7 @@ storiesOf('Basic', module)
       addItem={action('click to addItem')}
       removeItem={action('Click to remove item')}
       removeAllItems={action('Click to remove all items')}
+      fetchItems={action('Click to search items')}
     />
   ))
   .add('No search perform', () => (

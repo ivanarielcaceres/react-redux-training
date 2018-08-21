@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
@@ -885,6 +886,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
@@ -1764,6 +1766,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
@@ -2643,6 +2646,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}

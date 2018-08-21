@@ -52,7 +52,7 @@ export default function reducer(state = initialState, action) {
     }
 
     case SEARCH: {
-      let items = [...state.items];
+      let items = [...state.items];     
       items = items.filter(item => {
         return item.name.match(action.keyword);
       });

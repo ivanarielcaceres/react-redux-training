@@ -17,6 +17,7 @@ describe('<Basic />', () => {
         addItem={mockLoginfn}
         removeItem={mockLoginfn}
         removeAllItems={mockLoginfn}
+        fetchItems={mockLoginfn}
       />
     );
     expect(wrapper).toMatchSnapshot();
@@ -28,6 +29,7 @@ describe('<Basic />', () => {
         addItem={mockLoginfn}
         removeItem={mockLoginfn}
         removeAllItems={mockLoginfn}
+        fetchItems={mockLoginfn}
       />
     );
   });
