@@ -16,14 +16,7 @@ class Basic extends React.Component {
   };
 
   render = () => {
-    const {
-      items,
-      addItem,
-      removeItem,
-      removeAllItems,
-      doSearch,
-      fetchItems
-    } = this.props;
+    const { items, addItem, removeItem, removeAllItems, doSearch } = this.props;
     return (
       <div>
         <Container style={styles.container}>
@@ -37,7 +30,7 @@ class Basic extends React.Component {
               </Button>
             </Col>
             <Col sm={{ size: 'auto', offset: 1 }}>
-              <Button color="danger" onClick={removeAllItems}>
+              <Button color="danger" onClick={removeAllItems.bind(this, items)}>
                 Reset
               </Button>
             </Col>

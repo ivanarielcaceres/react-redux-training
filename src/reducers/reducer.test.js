@@ -1,11 +1,8 @@
 import reducer from './reducer';
-import { ADD_ITEM, REMOVE_ITEM, RESET, SEARCH } from 'actions/actions'
+import { ADD_ITEM, REMOVE_ITEM, RESET, SEARCH } from 'actions/actions';
 
 describe('Reducers', () => {
-  let mockData = [
-    {'id': 1,'name': 'Item 1'}, 
-    {'id': 2, 'name': 'Item 2'}
-  ];
+  let mockData = [{ key: 1, name: 'Item 1' }, { key: 2, name: 'Item 2' }];
   let doSearch;
   let initialState;
   let stateA;
@@ -19,28 +16,29 @@ describe('Reducers', () => {
   let stateI;
   let stateJ;
   beforeEach(() => {
-    const addItem = (name) => ({
+    const addItem = (key, name) => ({
       type: ADD_ITEM,
+      key,
       name
     });
-    const removeItem = (id) => ({
+    const removeItem = key => ({
       type: REMOVE_ITEM,
-      id
+      key
     });
     const removeAllItems = () => ({
-      type: RESET,
+      type: RESET
     });
-    doSearch = (keyword) => ({
+    doSearch = keyword => ({
       type: SEARCH,
       keyword
     });
     initialState = reducer(undefined, {});
-    stateA = reducer(initialState, addItem('Item 1'));
-    stateB = reducer(stateA, addItem('Item 2'));
-    stateC = reducer(stateB, addItem('Item 3'));
-    stateD = reducer(stateC, removeItem(0));
-    stateE = reducer(stateD, removeItem(1));
-    stateF = reducer(stateE, removeItem(2));
+    stateA = reducer(initialState, addItem('1', 'Item 1'));
+    stateB = reducer(stateA, addItem('2', 'Item 2'));
+    stateC = reducer(stateB, addItem('3', 'Item 3'));
+    stateD = reducer(stateC, removeItem(1));
+    stateE = reducer(stateD, removeItem(2));
+    stateF = reducer(stateE, removeItem(3));
     stateG = reducer(stateC, removeAllItems());
   });
   it('initial state', () => {
@@ -71,13 +69,13 @@ describe('Reducers', () => {
     expect(state.items.length).toBe(1);
   });
 
-  // it('Return 3 results after search', () => {
-  //   const state = reducer(stateC, doSearch('Item'));
-  //   expect(state.items.length).toBe(3);
-  // });
+  it('Return 3 results after search', () => {
+    const state = reducer(stateC, doSearch('Item'));
+    expect(state.items.length).toBe(3);
+  });
 
-  // it('Return empty results after search', () => {
-  //   const state = reducer(stateC, doSearch('Item 4'));
-  //   expect(state.items.length).toBe(0);
-  // });
+  it('Return empty results after search', () => {
+    const state = reducer(stateC, doSearch('Item 4'));
+    expect(state.items.length).toBe(0);
+  });
 });

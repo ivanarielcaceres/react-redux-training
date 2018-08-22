@@ -6,6 +6,7 @@ import {
   FETCH_ITEMS
 } from '../actions/actions';
 import initialState from '../store/initialState';
+import { consolidateStreamedStyles } from 'styled-components';
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -19,11 +20,7 @@ export default function reducer(state = initialState, action) {
     case ADD_ITEM: {
       const items = [...state.items];
 
-      const newItem = {
-        id: items.length,
-        name: action.name
-      };
-      items.push(newItem);
+      items.push({ key: action.key, name: action.name });
 
       return {
         ...state,
@@ -33,9 +30,8 @@ export default function reducer(state = initialState, action) {
     case REMOVE_ITEM: {
       let items = [...state.items];
       items = items.filter(function(item) {
-        return item.id !== action.id;
+        return item.key != action.key;
       });
-
       return {
         ...state,
         items
@@ -52,7 +48,7 @@ export default function reducer(state = initialState, action) {
     }
 
     case SEARCH: {
-      let items = [...state.items];     
+      let items = [...state.items];
       items = items.filter(item => {
         return item.name.match(action.keyword);
       });

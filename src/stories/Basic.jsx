@@ -9,9 +9,9 @@ import Basic from 'components/Basic/Basic';
 import Search from 'components/Search/Search';
 
 const items = [
-  { id: 0, name: 'Item 1' },
-  { id: 1, name: 'Item 2' },
-  { id: 2, name: 'Item 3' }
+  { key: 0, name: 'Item 1' },
+  { key: 1, name: 'Item 2' },
+  { key: 2, name: 'Item 3' }
 ];
 
 storiesOf('Basic', module)

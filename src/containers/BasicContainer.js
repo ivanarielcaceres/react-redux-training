@@ -14,7 +14,7 @@ const mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     addItem: item => dispatch(addItem(item)),
     removeItem: id => dispatch(removeItem(id)),
-    removeAllItems: () => dispatch(removeAllItems()),
+    removeAllItems: items => dispatch(removeAllItems(items)),
     doSearch: keyword => dispatch(doSearch(keyword)),
     fetchItems: () => dispatch(fetchItems())
   };

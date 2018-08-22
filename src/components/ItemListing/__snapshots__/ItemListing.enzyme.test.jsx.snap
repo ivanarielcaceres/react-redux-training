@@ -8,15 +8,15 @@ ShallowWrapper {
     items={
         Array [
             Object {
-              "id": 0,
+              "key": 0,
               "name": "Item 1",
             },
             Object {
-              "id": 1,
+              "key": 1,
               "name": "Item 2",
             },
             Object {
-              "id": 2,
+              "key": 2,
               "name": "Item 3",
             },
           ]
@@ -420,15 +420,15 @@ ShallowWrapper {
     items={
         Array [
             Object {
-              "id": 0,
+              "key": 0,
               "name": "Item 1",
             },
             Object {
-              "id": 1,
+              "key": 1,
               "name": "Item 2",
             },
             Object {
-              "id": 2,
+              "key": 2,
               "name": "Item 3",
             },
           ]

@@ -1,4 +1,4 @@
-import { itemsRef } from 'config/firebase';
+import { databaseRef } from 'config/firebase';
 /*
  * Action types
  */
@@ -6,25 +6,31 @@ export const ADD_ITEM = 'ADD_ITEM';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const RESET = 'RESET';
 export const SEARCH = 'SEARCH';
-
 export const FETCH_ITEMS = 'FETCH_ITEMS';
 
 /*
  * Action creators
  */
-// export const addItem = name => ({
-//   type: ADD_ITEM,
-//   name
-// });
+export const removeItem = key => async dispatch => {
+  const itemRef = databaseRef.ref(`noticias/${key}`);
+  itemRef.remove().then(() => {
+    dispatch({
+      type: REMOVE_ITEM,
+      key
+    });
+  });
+};
 
-export const removeItem = id => ({
-  type: REMOVE_ITEM,
-  id
-});
-
-export const removeAllItems = () => ({
-  type: RESET
-});
+export const removeAllItems = items => async dispatch => {
+  databaseRef
+    .ref(`noticias`)
+    .remove()
+    .then(() => {
+      dispatch({
+        type: RESET
+      });
+    });
+};
 
 export const doSearch = keyword => ({
   type: SEARCH,
@@ -32,18 +38,22 @@ export const doSearch = keyword => ({
 });
 
 export const addItem = name => async dispatch => {
-  itemsRef.push({ name });
-  dispatch({
-    type: ADD_ITEM,
-    name
+  const itemsRef = databaseRef.ref(`noticias`);
+  itemsRef.push({ name }).then(ref => {
+    dispatch({
+      type: ADD_ITEM,
+      key: ref.key,
+      name
+    });
   });
 };
 
 export const fetchItems = () => async dispatch => {
-  itemsRef.on('value', snap => {
+  const itemsRef = databaseRef.ref(`noticias`);
+  itemsRef.once('value', snap => {
     let items = [];
     snap.forEach(item => {
-      item = { name: item.val().name, id: item.key };
+      item = { name: item.val().name, key: item.key };
       items.push(item);
     });
     dispatch({

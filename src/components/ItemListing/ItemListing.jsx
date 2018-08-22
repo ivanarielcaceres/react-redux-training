@@ -6,9 +6,9 @@ import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 const ItemListing = ({ items, removeItem }) => (
   <ListGroup>
     {items.map(item => (
-      <ListGroupItem key={item.id}>
+      <ListGroupItem key={item.key}>
         {item.name}
-        <Button color="danger" onClick={removeItem.bind(this, item.id)}>
+        <Button color="danger" onClick={removeItem.bind(this, item.key)}>
           <FaEraser />
         </Button>
       </ListGroupItem>
