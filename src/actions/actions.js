@@ -32,11 +32,6 @@ export const removeAllItems = items => async dispatch => {
     });
 };
 
-export const doSearch = keyword => ({
-  type: SEARCH,
-  keyword
-});
-
 export const addItem = name => async dispatch => {
   const itemsRef = databaseRef.ref(`noticias`);
   itemsRef.push({ name }).then(ref => {
@@ -58,7 +53,27 @@ export const fetchItems = () => async dispatch => {
     });
     dispatch({
       type: FETCH_ITEMS,
-      items: items
+      items
     });
   });
+};
+
+export const doSearch = keyword => async dispatch => {
+  const itemsRef = databaseRef.ref(`noticias`);
+  itemsRef
+    .orderByChild('name')
+    .startAt(keyword)
+    .endAt(keyword + '\uf8ff"')
+    .once('value')
+    .then(snap => {
+      let items = [];
+      snap.forEach(item => {
+        item = { name: item.val().name, key: item.key };
+        items.push(item);
+      });
+      dispatch({
+        type: FETCH_ITEMS,
+        items
+      });
+    });
 };
