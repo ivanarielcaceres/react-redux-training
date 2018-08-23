@@ -22,6 +22,8 @@ storiesOf('Basic', module)
       removeItem={action('Click to remove item')}
       removeAllItems={action('Click to remove all items')}
       fetchItems={action('Click to search items')}
+      addedItemListener={action('Listener Firebase')}
+      removedItemListener={action('Listener Firebase')}
     />
   ))
   .add('Basic with one item', () => (
@@ -31,6 +33,8 @@ storiesOf('Basic', module)
       removeItem={action('Click to remove item')}
       removeAllItems={action('Click to remove all items')}
       fetchItems={action('Click to search items')}
+      addedItemListener={action('Listener Firebase')}
+      removedItemListener={action('Listener Firebase')}
     />
   ))
   .add('No search perform', () => (

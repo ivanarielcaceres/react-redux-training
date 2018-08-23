@@ -13,6 +13,8 @@ class Basic extends React.Component {
 
   componentDidMount = () => {
     this.props.fetchItems();
+    this.props.addedItemListener();
+    this.props.removedItemListener();
   };
 
   render = () => {

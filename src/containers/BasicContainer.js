@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import Basic from 'components/Basic/Basic';
 import {
   addItem,
+  addedItemListener,
   removeItem,
+  removedItemListener,
   removeAllItems,
   doSearch,
   fetchItems
@@ -16,7 +18,9 @@ const mapDispatchToProps = function mapDispatchToProps(dispatch) {
     removeItem: id => dispatch(removeItem(id)),
     removeAllItems: items => dispatch(removeAllItems(items)),
     doSearch: keyword => dispatch(doSearch(keyword)),
-    fetchItems: () => dispatch(fetchItems())
+    fetchItems: () => dispatch(fetchItems()),
+    addedItemListener: () => dispatch(addedItemListener()),
+    removedItemListener: () => dispatch(removedItemListener())
   };
 };
 

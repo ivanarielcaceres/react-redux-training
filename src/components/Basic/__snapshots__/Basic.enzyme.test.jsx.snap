@@ -6,10 +6,12 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    addedItemListener={[Function]}
     fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
+    removedItemListener={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -886,10 +888,12 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    addedItemListener={[Function]}
     fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
+    removedItemListener={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -1766,10 +1770,12 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    addedItemListener={[Function]}
     fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
+    removedItemListener={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -2646,10 +2652,12 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Basic
     addItem={[Function]}
+    addedItemListener={[Function]}
     fetchItems={[Function]}
     items={Array []}
     removeAllItems={[Function]}
     removeItem={[Function]}
+    removedItemListener={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

@@ -13,12 +13,7 @@ export const FETCH_ITEMS = 'FETCH_ITEMS';
  */
 export const removeItem = key => async dispatch => {
   const itemRef = databaseRef.ref(`noticias/${key}`);
-  itemRef.remove().then(() => {
-    dispatch({
-      type: REMOVE_ITEM,
-      key
-    });
-  });
+  itemRef.remove();
 };
 
 export const removeAllItems = items => async dispatch => {
@@ -34,13 +29,7 @@ export const removeAllItems = items => async dispatch => {
 
 export const addItem = name => async dispatch => {
   const itemsRef = databaseRef.ref(`noticias`);
-  itemsRef.push({ name }).then(ref => {
-    dispatch({
-      type: ADD_ITEM,
-      key: ref.key,
-      name
-    });
-  });
+  itemsRef.push({ name });
 };
 
 export const fetchItems = () => async dispatch => {
@@ -54,6 +43,27 @@ export const fetchItems = () => async dispatch => {
     dispatch({
       type: FETCH_ITEMS,
       items
+    });
+  });
+};
+
+export const addedItemListener = () => async dispatch => {
+  const itemsRef = databaseRef.ref(`noticias`);
+  itemsRef.on('child_added', snap => {
+    dispatch({
+      type: ADD_ITEM,
+      key: snap.key,
+      name: snap.val().name
+    });
+  });
+};
+
+export const removedItemListener = () => async dispatch => {
+  const itemsRef = databaseRef.ref(`noticias`);
+  itemsRef.on('child_removed', snap => {
+    dispatch({
+      type: REMOVE_ITEM,
+      key: snap.key
     });
   });
 };
