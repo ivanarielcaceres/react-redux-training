@@ -2,7 +2,7 @@ import reducer from './reducer';
 import { ADD_ITEM, REMOVE_ITEM, RESET, SEARCH } from 'actions/actions';
 
 describe('Reducers', () => {
-  let mockData = [{ key: 1, name: 'Item 1' }, { key: 2, name: 'Item 2' }];
+  let mockData = [{ key: '1', name: 'Item 1' }, { key: '2', name: 'Item 2' }];
   let doSearch;
   let initialState;
   let stateA;
@@ -36,9 +36,9 @@ describe('Reducers', () => {
     stateA = reducer(initialState, addItem('1', 'Item 1'));
     stateB = reducer(stateA, addItem('2', 'Item 2'));
     stateC = reducer(stateB, addItem('3', 'Item 3'));
-    stateD = reducer(stateC, removeItem(1));
-    stateE = reducer(stateD, removeItem(2));
-    stateF = reducer(stateE, removeItem(3));
+    stateD = reducer(stateC, removeItem('1'));
+    stateE = reducer(stateD, removeItem('2'));
+    stateF = reducer(stateE, removeItem('3'));
     stateG = reducer(stateC, removeAllItems());
   });
   it('initial state', () => {
