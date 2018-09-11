@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
 import { Button, Input, Row, Col } from 'reactstrap';
 
