@@ -6,7 +6,6 @@ import {
   FETCH_ITEMS
 } from '../actions/actions';
 import initialState from '../store/initialState';
-import { consolidateStreamedStyles } from 'styled-components';
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -30,7 +29,7 @@ export default function reducer(state = initialState, action) {
     case REMOVE_ITEM: {
       let items = [...state.items];
       items = items.filter(function(item) {
-        return item.key != action.key;
+        return item.key !== action.key;
       });
       return {
         ...state,

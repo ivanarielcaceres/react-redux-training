@@ -7,10 +7,6 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import initialState from '../../store/initialState';
 
 class Basic extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount = () => {
     this.props.fetchItems();
     this.props.addedItemListener();
