@@ -1,5 +1,11 @@
 import reducer from './reducer';
-import { ADD_ITEM, REMOVE_ITEM, RESET, SEARCH } from 'actions/actions';
+import {
+  FETCH_ITEMS,
+  ADD_ITEM,
+  REMOVE_ITEM,
+  RESET,
+  SEARCH
+} from 'actions/actions';
 
 describe('Reducers', () => {
   let mockData = [{ key: '1', name: 'Item 1' }, { key: '2', name: 'Item 2' }];
@@ -28,6 +34,10 @@ describe('Reducers', () => {
     const removeAllItems = () => ({
       type: RESET
     });
+    const fetchItems = () => ({
+      type: FETCH_ITEMS,
+      items: mockData
+    });
     doSearch = keyword => ({
       type: SEARCH,
       keyword
@@ -40,12 +50,14 @@ describe('Reducers', () => {
     stateE = reducer(stateD, removeItem('2'));
     stateF = reducer(stateE, removeItem('3'));
     stateG = reducer(stateC, removeAllItems());
+    stateH = reducer(initialState, fetchItems());
   });
   it('initial state', () => {
     expect(initialState).not.toBeNull();
     expect(initialState).toBeDefined();
     expect(initialState.items).toBeDefined();
     expect(initialState.items.length).toBe(0);
+    expect(stateH.items.length).toBe(2);
   });
 
   it('after 3 additions', () => {
