@@ -4,13 +4,13 @@ Boilerplate code and installation instructions for a quick setup of a walking sk
 
 "A 'walking skeleton' is an implementation of the thinnest possible slice of real functionality that we can automatically build, deploy and test end-to-end." Source: Cockburn, Alistair. Crystal Clear: A Human-powered methodology for small teams, 2004.
 
-
 It is ready to use with TDD with the basic setup for unit, integration and end to end tests.
 
-|            | Status                                                                                                                                                                                                       |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CI service | [![Build Status](https://travis-ci.org/ivanarielcaceres/react-redux-training.png?branch=master)](https://travis-ci.org/ivanarielcaceres/react-redux-training)                                          |
-| Tests      | [![Coverage Status](https://coveralls.io/repos/github/ivanarielcaceres/react-redux-training/badge.png?branch=master)](https://coveralls.io/github/ivanarielcaceres/react-redux-training?branch=master) |
+|                  | Status                                                                                                                                                                                                 |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CI service       | [![Build Status](https://travis-ci.org/ivanarielcaceres/react-redux-training.png?branch=master)](https://travis-ci.org/ivanarielcaceres/react-redux-training)                                          |
+| Tests            | [![Coverage Status](https://coveralls.io/repos/github/ivanarielcaceres/react-redux-training/badge.png?branch=master)](https://coveralls.io/github/ivanarielcaceres/react-redux-training?branch=master) |
+| Firebase Hosting | [ ![Codeship Status for ivanarielcaceres/react-redux-training](https://app.codeship.com/projects/1bf65dc0-97fa-0136-69ce-0e10429ce0aa/status?branch=master)](https://app.codeship.com/projects/305143) |
 
 ## Live demo
 
